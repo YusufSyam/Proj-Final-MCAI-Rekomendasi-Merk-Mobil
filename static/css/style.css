@@ -1,0 +1,58 @@
+body{
+	display: block;
+}
+
+.title{
+	display: block;
+	margin: 25px 0 50px 0;
+	text-align: center;
+}
+
+.containerInput{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.rightSide, .leftSide{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}		
+
+.rightSideChild{
+	padding: 0px 150px 0px 50px;
+}
+
+.leftSideChild{
+	padding: 0px 50px 0px 150px;
+}
+
+.icon{
+    width: 28px;
+    height: 28px;
+}
+
+.myButton{
+	display: block;
+	margin: 50px auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.result{
+	display: block;
+	margin: 25px 150px;
+}
+
+.inputTitle{
+    margin: 5px 0;
+}
+
+.validInterval{
+    margin-left: 5px;
+    font-size: 10px;
+    color: #8a8a8a;
+}

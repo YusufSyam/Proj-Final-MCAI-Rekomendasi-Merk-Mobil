@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rekomendasi Mobil</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="static/css/style.css" rel="stylesheet" type="text/css"/>
+	<link rel="icon" href= "https://api.iconify.design/ant-design/car-outlined.svg?color=%230d6efd"></head>
+<body>
+	<h4 class='title'>Rekomendasi Tipe, Brand, dan Model Mobil<br>Berdasarkan Spesifikasi Mobil</h4>
+
+	<form class='needs-validation' novalidate action="/" method="POST" class="has">
+	<div class='containerInput'>
+		<div class="leftSide">
+			<div class="leftSideChild">
+			<div class="inputTitle"> CC <span class="validInterval">900-12000</span> </div>
+			<div class="input-group mb-3">
+		  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="fluent:engine-24-regular" style="color: #0d6efd;"></span></label>
+		  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name='cc' required required value={{p_cc}}>
+			</div>
+			</div>
+
+			<div class="leftSideChild">
+			<div class="inputTitle"> Transmisi </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="fluent:transmission-24-filled" style="color: #0d6efd;"></span></label>
+			  <select class="form-select" id="inputGroupSelect01" name='transmisi'>
+			    <option value="Manual" {% if (p_transmisi=='Manual' or  p_transmisi=='') %} selected {% endif %}>Manual</option>
+			    <option value="Otomatis" {% if p_transmisi=='Otomatis' %} selected {% endif %}>Otomatis</option>
+			    <option value="Transmisi CVT" {% if p_transmisi=='Transmisi CVT' %} selected {% endif %}>Transmisi CVT</option>
+			  </select>
+			</div>
+			</div>
+
+			<div class="leftSideChild">
+			<div class="inputTitle"> Bahan Bakar</div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect02"><span class="iconify icon" data-icon="clarity:fuel-line" style="color: #0d6efd;"></span></label>
+			  <select class="form-select" id="inputGroupSelect02" name='bahan_bakar'>
+			    <option value="Bensin" {% if (p_bahan_bakar=='Bensin' or  p_bahan_bakar=='') %} selected {% endif %}>Bensin</option>
+			    <option value="Diesel" {% if p_bahan_bakar=='Diesel' %} selected {% endif %}>Diesel</option>
+			    <option value="Listrik" {% if p_bahan_bakar=='Listrik' %} selected {% endif %}>Listrik</option>
+			  </select>
+			</div>
+			</div>
+
+			<div class="leftSideChild">
+			<div class="inputTitle"> Kapasitas Tangki (liter) <span class="validInterval">30-400</span> </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="iconoir:battery-empty" style="color: #0d6efd;"></span></label>
+			  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name='kapasitas_tangki' required value={{p_kapasitas_tangki}}>
+			</div>
+			</div>
+
+			<div class="leftSideChild">
+			<div class="inputTitle"> GVW / Berat (Kg) <span class="validInterval">700-50000</span> </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="fa-solid:weight-hanging" style="color: #0d6efd;"></span></label>
+			  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="		inputGroup-sizing-default" name='berat' required value={{p_berat}}>
+			</div>
+			</div>
+		</div>
+
+		<div class="rightSide">
+			<div class="rightSideChild">
+				<div class="inputTitle"> Jumlah Seat / Jok <span class="validInterval">2-16</span> </div>
+				<div class="input-group mb-3">
+				  <label class="input-group-text" for="inputGroupSelect03"><span class="iconify icon" data-icon="ic:outline-event-seat" style="color: #0d6efd;"></span></label>
+				  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="		inputGroup-sizing-default"  name='jok' required value={{p_jok}}>
+				</div>
+			</div>
+			<div class="rightSideChild">
+			<div class="inputTitle"> Sistem Setir </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect03"><span class="iconify icon" data-icon="grommet-icons:system" style="color: #0d6efd;"></span></label>
+			  <select class="form-select" id="inputGroupSelect03" name='sistem_setir'>
+			    <option value="4x2" {% if (p_sistem_setir=='4x2' or  p_sistem_setir=='') %} selected {% endif %}>4x2</option>
+			    <option value="4x4" {% if p_sistem_setir=='4x4' %} selected {% endif %}>4x4</option>
+			    <option value="6x2" {% if p_sistem_setir=='6x2' %} selected {% endif %}>6x2</option>
+			    <option value="6x4" {% if p_sistem_setir=='6x4' %} selected {% endif %}>6x4</option>
+			  </select>
+			</div>
+		</div>
+
+			<div class="rightSideChild">
+			<div class="inputTitle"> Jumlah Pintu <span class="validInterval">2-5</span> </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="mdi:car-door" style="color: #0d6efd;"></span></label>
+			  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name='jumlah_pintu' required value={{p_jumlah_pintu}}>
+			</div>
+		</div>
+
+			<div class="rightSideChild">
+			<div class="inputTitle"> Jumlah Roda <span class="validInterval">4-10</span> </div>
+			<div class="input-group mb-3">
+			  <label class="input-group-text" for="inputGroupSelect01"><span class="iconify icon" data-icon="mdi:chart-donut-variant" style="color: #0d6efd;"></span></label>
+			  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name='jumlah_roda' required value={{p_jumlah_roda}}>
+			</div>
+		</div>
+
+			<div class="rightSideChild">
+			<div class="inputTitle"> Panjang, Lebar, dan Tinggi (mm)<span class="validInterval">(3000-13000) x (1400-2500) x (1400-3000)</span> </div>
+			<div class="input-group">
+			  <span class="input-group-text"><span class="iconify icon" data-icon="radix-icons:dimensions" style="color: #0d6efd;"></span></span>
+			  <input type="text" aria-label="panjang" class="form-control" name='panjang' required value={{p_panjang}}>
+			  <input type="text" aria-label="lebar" class="form-control" name='lebar' required value={{p_lebar}}>
+			  <input type="text" aria-label="tinggi" class="form-control" name='tinggi' required value={{p_tinggi}}>
+			</div>
+		</div>
+		</div>
+	</div>
+	<input type="submit" class="btn btn-outline-primary myButton" value="Prediksi"/>
+	</form>
+
+	<div class="result"><strong>{{result_car}} <br> {{result_model_brand}}</div>
+	<script>
+		(function () {
+		  'use strict'
+
+		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		  var forms = document.querySelectorAll('.needs-validation')
+
+		  // Loop over them and prevent submission
+		  Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			  form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+				  event.preventDefault()
+				  event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			  }, false)
+			})
+		})()
+	</script>
+	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</body>
+</html>
